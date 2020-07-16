@@ -1,0 +1,29 @@
+<!-- <mat-tab-group>
+    <mat-tab label="List" class="nav-link" routerLink="/list"> List </mat-tab>
+    <mat-tab label="Detail" class="nav-link" routerLink="/detail"> Detail </mat-tab>
+</mat-tab-group> -->
+
+<!-- <mat-toolbar color="primary">
+    <a mat-button class="nav-link" routerLink="/list">List</a>
+    <a mat-button class="nav-link" routerLink="/detail">Detail</a>
+</mat-toolbar> -->
+
+<!-- <nav mat-tab-nav-bar>
+     <a mat-tab-link *ngFor="let link of links"
+       (click)="activeLink = navigateRoute(link.path)"
+       [active]="activeLink == link"> {{link.path}} </a>
+</nav> -->
+
+<!-- <nav mat-tab-nav-bar>
+     <a mat-tab-link *ngFor="let test of tests"
+       (click)="activeLink = test"
+       [active]="activeLink == test"> {{test}} </a>
+</nav> -->
+
+<nav mat-tab-nav-bar>
+    <a mat-tab-link *ngFor="let link of links"
+      [routerLink]="link.path"
+      routerLinkActive
+      #i = "routerLinkActive"
+      [active]= "i.isActive"> {{link.label}} </a>
+</nav>

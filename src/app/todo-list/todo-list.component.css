@@ -1,0 +1,15 @@
+th{
+    font-size: 1rem;
+    background-color: blanchedalmond;
+}
+.red {
+    background: 	#FB8C00;
+}
+
+.green {
+    background: green;
+}
+
+.blue {
+    background: linear-gradient(to right, #F44336 7%, #ff9068 94%);
+}
