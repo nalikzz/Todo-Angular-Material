@@ -17,17 +17,24 @@ export class TodoListComponent implements OnInit {
     this.todos = this.tdService.getTodos();
   }
 
+  // public changeColorRow(row:any){
+  //   let color = ''
+
+  //   if(row.priority === 'High'){
+  //     color = 'red'// class in css name red (it's not color: red)
+  //   }else if(row.priority === 'Low'){
+  //     color = 'green'
+  //   }else if(row.priority === 'Medium'){
+  //     color = 'blue'
+  //   }
+  //   return  color
+  // }
   public changeColorRow(row:any){
     let color = ''
 
     if(row.priority === 'High'){
       color = 'red'// class in css name red (it's not color: red)
-    }else if(row.priority === 'Low'){
-      color = 'green'
-    }else if(row.priority === 'Medium'){
-      color = 'blue'
     }
-    
     return  color
   }
 

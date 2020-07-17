@@ -11,8 +11,6 @@ export class TodoService {
     new ToDo(3,"Test3","Desc",new Date(),"Doing","High")
   ];
   getTodos(){
-    console.log();
-    
     return this.todos;
   }
 }

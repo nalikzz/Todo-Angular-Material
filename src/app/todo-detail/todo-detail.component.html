@@ -1,1 +1,44 @@
-<p>todo-detail works!</p>
+<form action="">
+  <fieldset class="container">
+    <legend>Add</legend>
+    <div fxLayout="column" fxLayoutAlign="space-between">
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <mat-form-field fxFlex="45%">
+          <mat-label>Title</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <mat-form-field fxFlex="45%">
+          <input matInput [matDatepicker]="picker1" [formControl]="date">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <mat-form-field fxFlex="45%">
+          <mat-label>Status</mat-label>
+          <mat-select>
+            <mat-option value="option">Option</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field fxFlex="45%">
+          <mat-label>Priority</mat-label>
+          <mat-select>
+            <mat-option value="option">Option</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field fxFlex="100%">
+          <mat-label>Description</mat-label>
+          <textarea matInput></textarea>
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayoutAlign="space-between ">
+      <button mat-raised-button color="primary">Submit</button>
+      <button mat-raised-button color="primary">Back</button>
+    </div>
+  </fieldset>
+</form>
