@@ -1,14 +1,14 @@
-<form action="">
+<form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
   <fieldset class="container">
-    <legend>Add</legend>
+    <legend>{{editMode ? 'Update' : 'Add'}}</legend>
     <div fxLayout="column" fxLayoutAlign="space-between">
       <div fxLayout="row" fxLayoutAlign="space-between center">
         <mat-form-field fxFlex="45%">
           <mat-label>Title</mat-label>
-          <input matInput>
+          <input matInput formControlName="title">
         </mat-form-field>
         <mat-form-field fxFlex="45%">
-          <input matInput [matDatepicker]="picker1" [formControl]="date">
+          <input matInput [matDatepicker]="picker1" [formControl]="date" formControlName="dueDate">
           <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
           <mat-datepicker #picker1></mat-datepicker>
         </mat-form-field>
@@ -17,14 +17,14 @@
       <div fxLayout="row" fxLayoutAlign="space-between center">
         <mat-form-field fxFlex="45%">
           <mat-label>Status</mat-label>
-          <mat-select>
-            <mat-option value="option">Option</mat-option>
+          <mat-select formControlName="status">
+            <mat-option *ngFor="let status of statuses;" value="{{status}}">{{status}}</mat-option>
           </mat-select>
         </mat-form-field>
         <mat-form-field fxFlex="45%">
           <mat-label>Priority</mat-label>
-          <mat-select>
-            <mat-option value="option">Option</mat-option>
+          <mat-select formControlName="priority">
+            <mat-option  *ngFor="let priority of priorities;" value="{{priority}}">{{priority}}</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
@@ -32,13 +32,13 @@
       <div>
         <mat-form-field fxFlex="100%">
           <mat-label>Description</mat-label>
-          <textarea matInput></textarea>
+          <textarea matInput formControlName="description"></textarea>
         </mat-form-field>
       </div>
     </div>
     <div fxLayoutAlign="space-between ">
       <button mat-raised-button color="primary">Submit</button>
-      <button mat-raised-button color="primary">Back</button>
+      <button mat-raised-button color="primary" (click)="onBack()">Back</button>
     </div>
   </fieldset>
 </form>
