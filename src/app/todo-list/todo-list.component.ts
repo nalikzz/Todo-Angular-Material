@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToDo } from '../model/todo.model';
 import { TodoService } from '../todo.service';
 import { Router } from '@angular/router';
+// import { count } from 'console';
 
 @Component({
   selector: 'app-todo-list',
@@ -42,14 +43,16 @@ export class TodoListComponent implements OnInit {
   //   }
   //   return  color
   // }
-  public changeColorRow(row: any) {
-    let color = ''
-
-    if (row.priority === 'High') {
-      color = 'red'// class in css name red (it's not color: red)
-    }
-    return color
-  }
+  // public changeColorRow(row: ToDo) {
+  //   let color = ''
+  //   console.count("row");
+    
+  //   if (row.priority === 'High') {
+  //     color = 'red'// class in css name red (it's not color: red)
+  //   }
+  //   return color
+    
+  // }
 
   public badgeColorStatus(status: string) {
     if (status === 'To Do') {

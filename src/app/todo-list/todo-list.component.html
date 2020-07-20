@@ -43,7 +43,8 @@
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="columnsName"></tr>
-    <tr mat-row *matRowDef="let row; columns: columnsName;" [ngClass]="changeColorRow(row)"></tr>
+    <!-- <tr mat-row *matRowDef="let row; columns: columnsName;" [ngClass]="changeColorRow(row)"></tr> -->
+    <tr mat-row *matRowDef="let row; columns: columnsName;" [ngClass]="row.priority == 'High' ? 'warn': 'udifined'"></tr>
 
 </table>
 

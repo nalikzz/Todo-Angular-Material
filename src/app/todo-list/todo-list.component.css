@@ -10,6 +10,6 @@ th{
     background: green;
 }
 
-.blue {
-    background: linear-gradient(to right, #F44336 7%, #ff9068 94%);
+.warn {
+    background: linear-gradient(to right, #F44336 2%, #ff9068 30%);
 }
